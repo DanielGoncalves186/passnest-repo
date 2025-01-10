@@ -1,0 +1,36 @@
+<ion-content class="ion-padding" style="overflow-y: hidden;">
+  <h1>Create Account!</h1>
+  <h3>Sign up to get started</h3>
+
+    <form [formGroup] = "registerForm" (ngSubmit)="submitForm()">
+      <ion-item>
+        <ion-input placeholder="Username" name="username" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item lines="none" *ngIf="registerForm.controls['username'].invalid && (registerForm.controls['username'].dirty || registerForm.controls['username'].touched)">
+        <ion-text color="danger" *ngIf="registerForm.controls['username'].errors?.['required']">Username is required.</ion-text>
+        <ion-text color="danger" *ngIf="registerForm.controls['username'].errors?.['minlength']">Username should at least have 5 characteres.</ion-text>
+        <ion-text color="danger" *ngIf="registerForm.controls['username'].errors?.['maxlength']">Username should have at most 20 characteres.</ion-text>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input placeholder="Email" label="Email Address" type="email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none" *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+        <ion-text color="danger" *ngIf="registerForm.controls['email'].errors?.['required']">Email is required.</ion-text>
+        <ion-text color="danger" *ngIf="registerForm.controls['email'].errors?.['email']">Please enter a valid email.</ion-text>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-input placeholder="Password" label="Password" type="password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none" *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+        <ion-text color="danger" *ngIf="registerForm.controls['password'].errors?.['required']">Password is required.</ion-text>
+        <ion-text color="danger" *ngIf="registerForm.controls['password'].errors?.['minlength']">Password should at least have 5 characteres.</ion-text>
+        <ion-text color="danger" *ngIf="registerForm.controls['password'].errors?.['maxlength']">Password should have at most 20 characteres.</ion-text>
+      </ion-item>
+      <br>
+      <br>
+      <ion-button [disabled] = "!registerForm.valid" type="submit" expand="block">Register</ion-button>
+      <p class="footer-text">Already have an account? <a routerLink="/login">Sign In</a></p>
+    </form>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-content class="ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Home</ion-title>
+  </ion-toolbar>
+  <br>
+  <div class="card-container">
+    <ion-card *ngFor="let entry of entrys" color="{{ entry.color }}" (click) = "openModal(entry)">
+      <ion-card-header>
+        <div class="header-container">
+          <div class="card-content">
+            <ion-card-title style="font-size: 120%; text-align: center;"><b>{{ entry.nname }}</b></ion-card-title>
+            <br>
+            <ion-card-subtitle style="text-align: center;">Created at {{ entry.createdAt | date:'dd/MM/yyyy'}}</ion-card-subtitle>
+          </div>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>    
+    </ion-card>
+  </div>
+</ion-content>

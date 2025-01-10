@@ -1,0 +1,59 @@
+<ion-content class="ion-padding" style="overflow-y: hidden; ">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu" (click)="cancel()"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="centered-title">Edit Entry</ion-title>
+  </ion-toolbar>
+<br><br>
+  <form [formGroup] = "updateForm" (ngSubmit) = "submitForm()">
+    <ion-item>
+      <ion-label class="custom-label" position="stacked">Entry Name</ion-label>
+      <ion-input class="custom-input" formControlName="nname" placeholder="{{entry.nname}}" name="nname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="custom-label" position="stacked">Username</ion-label>
+      <ion-input class="custom-input" formControlName="nusername" placeholder="{{entry.nusername}}" name="nusername"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="custom-label" position="stacked">Email</ion-label>
+      <ion-input class="custom-input" formControlName="nemail" placeholder="{{entry.nemail}}" name="nemail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="custom-label" position="stacked">Password</ion-label>
+      <ion-input class="custom-input" formControlName="npass" [value]="entry.npass"  name="npass" [type]="passwordType"></ion-input>
+      <ion-buttons slot="end">
+        <ion-button (click)="togglePasswordVisibility()" fill="clear" class="custom-blue-button">
+          <ion-icon [name]="passwordType === 'password' ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
+        <ion-button (click)="copyPasswordToClipboard(entry.npass)" fill="clear" class="custom-blue-button">
+          <ion-icon name="copy"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item>
+      <ion-label class="custom-label" position="stacked">URL</ion-label>
+      <ion-input class="custom-input" formControlName="nurl" placeholder="{{entry.nurl}}" name="nurl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="custom-label" position="stacked">Notes</ion-label>
+      <ion-input class="custom-input" formControlName="ndesc" placeholder="{{entry.ndesc}}" name="ndesc"></ion-input>
+    </ion-item>
+    <ion-item lines="full" (click)="toggleDropdown()" button detail="false">
+      <ion-label class="custom-label">Color</ion-label>
+      <div class="color-circle" [ngStyle]="{'background-color': selectedItem}"></div>
+    </ion-item>
+    <ion-grid *ngIf="showDropdown" color="light">
+      <ion-row>
+        <ion-col (click)="selectItem('#f53d3d')"><div class="color-circle red"></div></ion-col>
+        <ion-col (click)="selectItem('#3880ff')"><div class="color-circle blue"></div></ion-col>
+        <ion-col (click)="selectItem('#2dd36f')"><div class="color-circle green"></div></ion-col>
+        <ion-col (click)="selectItem('#8b8b8b')"><div class="color-circle gray"></div></ion-col>
+        <ion-col (click)="selectItem('#222428')"><div class="color-circle black"></div></ion-col>
+        <ion-col (click)="selectItem('#ffc409')"><div class="color-circle yellow"></div></ion-col>
+        <ion-col (click)="selectItem('#3dc2ff')"><div class="color-circle blue-light"></div></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button class="bt-update" type="submit" expand="block" (click)="confirm()">Update</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,90 @@
+.menu-header-bg {
+    height: 230px;
+    width: 350px;
+    background: linear-gradient(90deg,rgba(0, 220, 255, 1),rgba(186,0,255,1));
+    box-shadow: 0px 1px 10px rgb(148, 198, 255);
+    margin-left: -18px;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+
+.alert-title.sc-ion-alert-md {
+  color: #eb445a !important;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.listcalendar{
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+.listcalendar[hidden]{
+  height: auto;
+  opacity: 1;
+}
+.header-content {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 7px;
+    }
+  
+    h2 {
+      color: white;
+      font-weight: 200;
+      font-size: 22px;
+      margin: 0;
+    }
+  
+    p {
+      font-size: 12px;
+      color: white;
+      font-weight: 150;
+      letter-spacing: 0.4px;
+    }
+}
+ion-label {
+  font-weight: 500;
+}
+.sign-out-item{
+  margin-top: 55%;
+  color: red;
+  --border-color:red;
+}
+.custom-icon {
+  width: 24px; 
+  height: 24px; 
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.sign-out-icon {
+  flex-shrink: 0;
+}
+
+.sign-out-label {
+  flex-grow: 1;
+  --border-color: red;
+}
+
+@media only screen and (min-height: 800px){
+  .sign-out-item{
+    margin-top: 80%;
+  }
+}

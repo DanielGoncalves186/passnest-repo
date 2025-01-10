@@ -1,0 +1,28 @@
+<ion-content class="ion-padding" style="overflow-y: hidden;">
+  <img src="../../../assets/imgs/passnestlogo.png" alt="logo" class="logo">
+  <h1 class="color1">Welcome!</h1>
+  <h3>Sign in to your account</h3>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitform()">
+    <ion-item>
+      <ion-input placeholder="Email" label="Email Address" type="email" name="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item lines="none" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+      <ion-text color="danger" *ngIf="loginForm.controls['email'].errors?.['required']">Email is required.</ion-text>
+      <ion-text color="danger" *ngIf="loginForm.controls['email'].errors?.['email']">Please enter a valid email.</ion-text>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input placeholder="Password" label="Password" type="password" name="password" formControlName="password"></ion-input>
+    </ion-item> 
+    <ion-item lines="none" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+      <ion-text color="danger" *ngIf="loginForm.controls['password'].errors?.['required']">Password is required.</ion-text>
+    </ion-item>
+    <br>
+    <a routerLink="#" class="forgot-password-link">Forgot Password?</a>
+    <br><br>
+    <ion-button [disabled] = "!loginForm.valid" type="submit" expand="block">Login</ion-button>
+  </form>
+
+  <p class="footer-text">Already have an account? <a routerLink="/register">Sign Up</a></p>
+</ion-content>

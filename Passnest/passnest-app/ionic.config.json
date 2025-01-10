@@ -1,0 +1,7 @@
+{
+  "name": "save-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
