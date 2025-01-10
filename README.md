@@ -1,6 +1,6 @@
 # PassNest
 
-Welcome to **PassNest**, a secure, user-friendly password manager designed to make managing your digital credentials effortless. With PassNest, you can store, generate, and organize your passwords securely, all while ensuring top-notch encryption and accessibility.
+Welcome to **PassNest**, a secure, user-friendly password manager designed to make managing your digital credentials effortless. With PassNest, you can store and organize your passwords securely, all while ensuring top-notch encryption and accessibility.
 
 ---
 
