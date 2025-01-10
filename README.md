@@ -23,7 +23,7 @@ Welcome to **PassNest**, a secure, user-friendly password manager designed to ma
 ### Clone the Repository
 ```bash
 $ git clone https://github.com/DanielGoncalves186/passnest-repo
-$ cd Passnest
+$ cd passnest-repo
 ```
 
 ### Install Dependencies
