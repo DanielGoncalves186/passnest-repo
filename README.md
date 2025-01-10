@@ -6,7 +6,7 @@ Welcome to **PassNest**, a secure, user-friendly password manager designed to ma
 
 ## Features
 
-- 🔒 **Secure Storage**: Bcrypt encryption to keep your passwords safe.
+- 🔒 **Secure Storage**: Bcrypt and Crypto encryption to keep your passwords safe.
 - 🗂️ **Organized Vault**: Categorize your credentials for easy access.
 - 🔐 **Two-Factor Authentication (2FA)**: Added security for your vault.
 
